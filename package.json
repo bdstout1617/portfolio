@@ -2,7 +2,7 @@
   "name": "portfolio",
   "version": "0.0.1",
   "description": "My Resume and Portfolio",
-  "productName": "Portfolio",
+  "productName": "BS Portfolio",
   "author": "Brandon Stout <bdstout1617@gmail.com>",
   "type": "module",
   "private": true,

@@ -98,8 +98,6 @@ import TriforceIcon from 'src/components/TriforceIcon.vue';
 import { resumeData } from '../data/resume';
 import type { Skill } from '../data/resume';
 
-console.log(JSON.stringify(resumeData))
-
 function formatDate(isoDate: string): string {
   const date = new Date(isoDate);
   const monthNames = [
