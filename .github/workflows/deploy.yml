@@ -5,6 +5,8 @@ on:
   push:
     branches:
       - main
+env:
+  VUE_ROUTER_BASE: "/portfolio/"
 jobs:
   build:
     runs-on: ubuntu-latest
