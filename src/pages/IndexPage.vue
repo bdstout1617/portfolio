@@ -4,6 +4,9 @@
       <div class="col-12 col-md-10 col-lg-8">
         <!-- Name and Contact Information -->
         <div class="text-center q-my-lg zelda-border">
+          <div class="text-uppercase font-zelda" style="font-size: 10px;">
+            It's dangerous to go alone! Hire...
+          </div>
           <div class="text-h2 q-mb-sm gradient-text font-zelda">
             <TriforceIcon
               :size="70"
@@ -13,7 +16,7 @@
               :size="70"
             />
           </div>
-          <div class="text-body1 text-primary font-zelda text-md">
+          <div class="text-body1 text-primary font-zelda" style="font-size: 10px">
             {{ resumeData.contact.email }} | {{ resumeData.contact.phone }} | {{ resumeData.contact.location }}
           </div>
         </div>
