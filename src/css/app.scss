@@ -6,17 +6,9 @@
 
 // Zelda-themed global styles
 body {
-  background: #0d0d0d;
-  background-image: 
-    repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(45, 80, 22, 0.03) 2px, rgba(45, 80, 22, 0.03) 4px),
-    repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(45, 80, 22, 0.03) 2px, rgba(45, 80, 22, 0.03) 4px);
-  // font-family: 'Press Start 2P', monospace;
-  image-rendering: pixelated;
-  image-rendering: -moz-crisp-edges;
-  image-rendering: crisp-edges;
   user-select: none;
-  color: #e0e0e0;
-  
+  // Text color on the darker background to not be quite so harsh
+  color: $softText
 }
 
 .font-zelda {
@@ -30,8 +22,8 @@ body {
 // Retro pixelated text
 .text-h1, .text-h2, .text-h3, .text-h4, .text-h5{
   text-shadow: 
-    2px 2px 0px #000,
-    -1px -1px 0px #5a9d3a;
+    2px 2px 0px $dark-page,
+    -1px -1px 0px $secondary;
   letter-spacing: 2px;
   line-height: 1.6;
 }
@@ -39,26 +31,22 @@ body {
 .text-h6 {
   letter-spacing: 2px;
   line-height: 1.6;
-  color: #e0e0e0;
 }
 
 
 .text-body1{
   font-size: 8px;
-  color: #e0e0e0;
   line-height: 1.8;
   letter-spacing: 1px;
 }
 .text-body2{
   font-size: 22px;
-  color: #e0e0e0;
   line-height: 1.2;
 	// font-weight: 700;
   // letter-spacing: 1px;
 }
 .text-body3{
   font-size: 16px;
-  color: #e0e0e0;
   font-family: monospace;
 }
 
@@ -72,14 +60,8 @@ body {
 }
 // Game-style borders
 .zelda-border {
-  border: 3px solid #5a9d3a;
-  border-image: 
-    linear-gradient(45deg, #5a9d3a, #2d5016, #5a9d3a) 1;
-  box-shadow: 
-    inset 0 0 10px rgba(45, 80, 22, 0.5),
-    0 0 10px rgba(90, 157, 58, 0.3),
-    0 4px 8px rgba(0, 0, 0, 0.8);
-  background: rgba(13, 13, 13, 0.9);
+  border: 3px solid $secondary;
+  border-image: linear-gradient(45deg, $secondary, $primary, $secondary) 1;
   padding: 16px;
   position: relative;
 }
