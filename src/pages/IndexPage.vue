@@ -9,14 +9,16 @@
           </div>
           <div class="text-h2 q-mb-sm gradient-text font-zelda">
             <TriforceIcon
-              :size="70"
+              v-if="showTriforceIcons"
+              :size="triforceIconSize"
             />
             {{ resumeData.contact.name }}
             <TriforceIcon
-              :size="70"
+              v-if="showTriforceIcons"
+              :size="triforceIconSize"
             />
           </div>
-          <div class="text-body1 text-primary font-zelda" style="font-size: 10px">
+          <div class="text-body1 lt-sm text-body2 text-primary font-zelda" style="font-size: 10px">
             {{ resumeData.contact.email }} | {{ resumeData.contact.phone }} | {{ resumeData.contact.location }}
           </div>
         </div>
@@ -71,22 +73,22 @@
               </div>
             </div>
             <p class="text-body3 q-mt-sm">{{ experience.summary }}</p>
-            <q-list 
-              v-if="experience.achievements && experience.achievements.length > 0" 
-              dense 
+            <q-list
+              v-if="experience.achievements && experience.achievements.length > 0"
+              dense
               class="q-mt-sm"
             >
-              <q-item 
-                v-for="(achievement, achievementIndex) in experience.achievements" 
-                  :key="achievementIndex"
-                >
-                <q-item-section avatar class="text-secondary">
-                  <q-icon name="fa-solid fa-play" size="md" />
-                </q-item-section>
-                <q-item-section>
-                  <q-item-label class="text-body3">{{ achievement }}</q-item-label>
-                </q-item-section>
-              </q-item>
+              <template v-for="(achievement, achievementIndex) in experience.achievements" :key="achievementIndex">
+                <q-item>
+                  <q-item-section avatar class="text-secondary">
+                    <q-icon :name="currentTheme === 'professional' ? 'fa-solid fa-circle' : 'fa-solid fa-play'" :size="currentTheme === 'professional' ? 'xs' : 'md'" />
+                  </q-item-section>
+                  <q-item-section>
+                    <q-item-label class="text-body3">{{ achievement }}</q-item-label>
+                  </q-item-section>
+                </q-item>
+                <q-separator v-if="achievementIndex < experience.achievements.length - 1" class="q-my-xs" />
+              </template>
             </q-list>
             <q-separator v-if="index < resumeData.workExperience.length - 1" class="q-mt-md" />
           </div>
@@ -100,6 +102,22 @@
 import TriforceIcon from 'src/components/TriforceIcon.vue';
 import { resumeData } from '../data/resume';
 import type { Skill } from '../data/resume';
+import { useTheme } from '../composables/useTheme';
+import { useQuasar } from 'quasar';
+import { computed } from 'vue';
+
+const { currentTheme } = useTheme();
+const $q = useQuasar();
+
+// Responsive icon size computation
+const triforceIconSize = computed(() => {
+  if ($q.screen.lt.sm) return 40; // Mobile: smaller
+  if ($q.screen.lt.md) return 50; // Tablet: medium
+  return 70; // Desktop: original size
+});
+
+// Show TriforceIcons only on larger screens
+const showTriforceIcons = computed(() => !$q.screen.lt.sm);
 
 function formatDate(isoDate: string): string {
   const date = new Date(isoDate);

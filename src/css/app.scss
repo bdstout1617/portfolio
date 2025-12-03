@@ -1,8 +1,242 @@
 // app global css in SCSS form
 // Legend of Zelda Theme Styling
 
+// Theme switching classes
+.theme-professional {
+  // Professional theme styles
+
+  // Override global body styles
+  body {
+    user-select: auto;
+    color: #e2e8f0; // Professional light text on dark background
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #0f172a; // Professional dark blue background
+  }
+
+  // Professional typography (dark mode)
+  .text-h1, .text-h2, .text-h3, .text-h4, .text-h5 {
+    text-shadow: none;
+    letter-spacing: -0.025em;
+    line-height: 1.3;
+    font-weight: 600;
+    color: #f8fafc; // Light text on dark background
+  }
+
+  .text-h6 {
+    letter-spacing: -0.025em;
+    line-height: 1.4;
+    font-weight: 500;
+    color: #e2e8f0;
+  }
+
+  .text-body1 {
+    font-size: 14px;
+    line-height: 1.6;
+    letter-spacing: 0;
+    font-weight: 400;
+    color: #cbd5e1;
+  }
+
+  .text-body2 {
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 400;
+    letter-spacing: 0;
+    color: #e2e8f0;
+  }
+
+  .text-body3 {
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: #cbd5e1;
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 50%, #2563eb 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+  }
+
+  // Clean professional borders (dark mode)
+  .zelda-border {
+    border: 1px solid #334155;
+    border-radius: 8px;
+    padding: 20px;
+    background: #1e293b;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    position: relative;
+  }
+
+  .zelda-border::before {
+    display: none;
+  }
+
+  // Professional chip styling (dark mode)
+  .q-chip {
+    border: 1px solid #475569 !important;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+    background: #1e293b !important;
+    text-transform: none;
+    font-weight: 500;
+    color: #e2e8f0 !important;
+  }
+
+  // Clean separator styling (dark mode)
+  .q-separator {
+    background: #475569 !important;
+    height: 1px !important;
+    box-shadow: none !important;
+  }
+
+  // Professional button styling (dark mode)
+  .q-btn {
+    border: 1px solid #475569 !important;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+    background: #1e293b !important;
+    border-radius: 6px;
+    font-weight: 500;
+    text-transform: none;
+    transition: all 0.2s ease;
+    color: #e2e8f0 !important;
+  }
+
+  .q-btn:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3) !important;
+    border-color: #64748b !important;
+    background: #334155 !important;
+    transform: translateY(-1px);
+  }
+
+  // Professional page background (dark mode)
+  .q-page {
+    background: #0f172a;
+    min-height: 100vh;
+  }
+
+  // Clean scrollbar (dark mode)
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #1e293b;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #475569;
+    border-radius: 4px;
+    border: none;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #64748b;
+  }
+
+  // Professional header and footer (dark mode)
+  .q-header {
+    background: #1e293b !important;
+    border-bottom: 1px solid #334155 !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+  }
+
+  .q-footer {
+    background: #1e293b !important;
+    border-top: 1px solid #334155 !important;
+    box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.3) !important;
+  }
+
+  .q-toolbar__title {
+    text-shadow: none;
+    letter-spacing: -0.025em;
+    color: #f8fafc;
+    font-weight: 600;
+  }
+}
+
+// Professional text colors (dark mode)
+.text-primary {
+  color: #60a5fa !important;
+}
+
+.text-secondary {
+  color: #94a3b8 !important;
+}
+
+// Responsive text sizing
+@media (max-width: 599px) {
+  // Mobile text sizes
+  .gradient-text {
+    font-size: 1.5rem !important;
+  }
+
+  .q-toolbar__title {
+    font-size: 0.875rem !important;
+  }
+
+  // Zelda theme specific smaller sizes on mobile
+  .theme-zelda .gradient-text {
+    font-size: 1.85rem !important;
+  }
+
+  .theme-zelda .font-zelda .q-toolbar__title {
+    font-size: 0.75rem !important;
+  }
+}
+
+@media (max-width: 959px) and (min-width: 600px) {
+  // Tablet text sizes
+  .gradient-text {
+    font-size: 2rem !important;
+  }
+
+  // Zelda theme specific smaller sizes on tablet
+  .theme-zelda .gradient-text {
+    font-size: 1.85rem !important;
+  }
+
+  .theme-zelda .font-zelda .q-toolbar__title {
+    font-size: 0.875rem !important;
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 599px) {
+  // Mobile adjustments
+  .q-page {
+    padding: 16px !important;
+  }
+
+  .zelda-border {
+    padding: 16px !important;
+  }
+
+  // Reduce margins on mobile
+  .q-my-lg {
+    margin-top: 1rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .q-mb-lg {
+    margin-bottom: 1rem !important;
+  }
+}
+
+@media (max-width: 959px) and (min-width: 600px) {
+  // Tablet adjustments
+  .zelda-border {
+    padding: 18px !important;
+  }
+}
+
+// Note: Zelda theme styles are defined globally and don't need a separate class
+
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 // Zelda-themed global styles
 body {
@@ -17,6 +251,22 @@ body {
 
 .font-kode {
   font-family: 'Kode Mono', monospace !important;
+}
+
+.font-professional {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+}
+
+// Override existing font classes in professional theme
+.theme-professional .font-kode,
+.theme-professional .font-zelda {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+}
+
+// Hide Zelda-specific elements in professional theme
+.theme-professional .zelda-border .text-uppercase:first-child,
+.theme-professional .gradient-text svg {
+  display: none !important;
 }
 
 // Retro pixelated text
@@ -161,19 +411,13 @@ body {
     inset 0 2px 4px rgba(90, 157, 58, 0.3) !important;
 }
 
-.q-toolbar-title {
-  text-shadow: 
-    2px 2px 0px #000,
-    -1px -1px 0px #d4af37;
-  letter-spacing: 2px;
-}
 
-// Text colors
-.text-primary {
+// Zelda theme text colors (when no specific theme class is applied)
+.theme-zelda .text-primary {
   color: #5a9d3a !important;
 }
 
-.text-secondary {
+.theme-zelda .text-secondary {
   color: #d4af37 !important;
 }
 
