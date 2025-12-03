@@ -18,7 +18,7 @@
               :size="triforceIconSize"
             />
           </div>
-          <div class="text-body1 lt-sm text-body2 text-primary font-zelda" style="font-size: 10px">
+          <div class="text-body1 text-primary font-zelda" style="font-size: 14px">
             {{ resumeData.contact.email }} | {{ resumeData.contact.phone }} | {{ resumeData.contact.location }}
           </div>
         </div>
